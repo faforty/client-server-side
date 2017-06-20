@@ -1,0 +1,22 @@
+{
+  "parser": "babel-eslint",
+  "extends": "standard",
+  "plugins": [
+    "babel",
+    "promise",
+    "import"
+  ],
+  "rules": {
+    "key-spacing": "off",
+    "max-len": [
+      2,
+      120,
+      2
+    ],
+    "object-curly-spacing": [
+      2,
+      "always"
+    ],
+    "comma-dangle": "off"
+  }
+}

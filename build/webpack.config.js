@@ -1,5 +1,4 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require('path')
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
@@ -11,11 +10,19 @@ module.exports = {
     path: path.resolve(__dirname, './dist/'),
     publicPath: '/',
   },
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        use: ['vue-loader'],
+      }, {
+        test: /\.js$/,
+        use: ['babel-loader'],
+        exclude: /node_modules/,
+      },
+    ],
+  },
   resolve: {
-    modules: [path.resolve(__dirname, './src'), 'node_modules']
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, './src'),
-    port: 9000
-  },
-};
+    modules: [path.resolve(__dirname, './src'), 'node_modules'],
+  }
+}
