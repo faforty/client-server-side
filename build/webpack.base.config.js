@@ -40,7 +40,7 @@ const config = {
 
 if (__DEV__) {
   config.plugins.push(
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin()
   )
 }

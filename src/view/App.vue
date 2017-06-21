@@ -1,5 +1,5 @@
 <template>
   <div id="app">
-    cghbhj
+    cghbhj 
   </div>
 </template>

@@ -28,9 +28,9 @@ const config = merge(baseConfig, {
     }),
     // extract webpack runtime & manifest to avoid vendor chunk hash changing
     // on every build.
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'manifest'
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'manifest'
+    // }),
     new VueSSRClientPlugin()
   ]
 })
