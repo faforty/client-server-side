@@ -38,3 +38,5 @@ While developing, you will probably rely mostly on `yarn start`; however, there 
 |`build`            |Builds the application to ./dist|
 |`build:client`     |Builds the application of client|
 |`build:server`     |Builds the application of server|
+|`lint`             |[Lints](http://stackoverflow.com/questions/8503559/what-is-linting) the project for potential errors|
+|`lint:fix`         |Lints the project and [fixes all correctable errors](http://eslint.org/docs/user-guide/command-line-interface.html#fix)|
