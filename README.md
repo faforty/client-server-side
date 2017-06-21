@@ -33,6 +33,7 @@ While developing, you will probably rely mostly on `yarn start`; however, there 
 
 |`yarn <script>`    |Description|
 |-------------------|-----------|
+|`dev`              |Run dev server with HotModuleReplacement|
 |`start`            |Serves your app at `localhost:9000`|
 |`build`            |Builds the application to ./dist|
 |`build:client`     |Builds the application of client|
