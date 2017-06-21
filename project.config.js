@@ -6,5 +6,6 @@ module.exports = {
   publicPath: '/',
   srcDir: 'src',
   outDir: 'dist',
-  port: 9000
+  port: 9000,
+  autoprefixer: ['last 5 versions']
 }

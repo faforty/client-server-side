@@ -3,9 +3,6 @@ const webpack = require('webpack')
 const project = require('../project.config')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const inProject = path.resolve.bind(path, project.basePath)
-const inProjectSrc = (file) => inProject(project.srcDir, file)
-
 const __DEV__ = project.env === 'development'
 const __PROD__ = project.env === 'production'
 
@@ -26,10 +23,39 @@ const config = {
         use: ['babel-loader'],
         exclude: /node_modules/,
       },
+      // {
+      //   test: /\.styl$/,
+      //   use: [
+      //     'style-loader',
+      //     'css-loader',
+      //     {
+      //       loader: 'stylus-loader',
+      //       options: {
+      //         use: [
+      //           require('autoprefixer-stylus')(project.autoprefixer),
+      //         ],
+      //       },
+      //     },
+      //   ],
+      // },
+      {
+        test: /\.styl$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'vue-style-loader',
+          use: ['css-loader', 'stylus-loader']
+        })
+      },
     ],
   },
   resolve: {
-    modules: [path.resolve(__dirname, './src'), 'node_modules'],
+    extensions: ['.js', '.vue', '.styl', '.json'],
+    alias: {
+      'src': path.resolve(project.basePath, 'src'),
+    },
+    modules: [
+      path.resolve(project.basePath, './src'),
+      'node_modules'
+    ],
   },
   performance: {
     maxEntrypointSize: 300000,

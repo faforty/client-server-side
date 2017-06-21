@@ -7,7 +7,11 @@ const routes = [
   {
     name: 'home',
     path: '',
-    component: require('../view/Home.vue'),
+    component: require('../view/Home'),
+  }, {
+    name: 'about',
+    path: '/about',
+    component: require('../view/About')
   }
 ]
 
