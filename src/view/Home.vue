@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
-    cghbhj
+  <div>
+    HOME
   </div>
 </template>

@@ -1,12 +1,19 @@
-const Vue = require('vue')
-const App = require('./view/App.vue')
+import Vue from 'vue'
+import { createRouter } from './router'
+import { createStore } from './store'
+import App from './view/App.vue'
 
 // экспортируем функцию фабрику для создания экземпляров
 // нового приложения, маршрутизатора и хранилища
 export function createApp () {
+  const router = createRouter()
+  const store = createStore()
+
   const app = new Vue({
-    // корневой экземпляр просто рендерит компонент App
+    store,
+    router,
     render: h => h(App)
   })
-  return { app }
+
+  return { app, router, store }
 }
